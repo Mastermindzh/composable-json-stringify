@@ -1,6 +1,6 @@
 {
   "name": "@mastermindzh/composable-json-stringify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enhance JSON.stringify with composable replacer functions to handle non-serializable JavaScript types like BigInt, Symbols, and more",
   "keywords": [
     "typescript",
