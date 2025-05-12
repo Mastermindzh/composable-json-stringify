@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Use Node version from .nvmrc automatically",
+      "type": "shell",
+      "command": "source /usr/share/nvm/init-nvm.sh && nvm use $(cat .nvmrc)",
+      "windows": {
+        "command": "nvm use $(type .nvmrc)"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}

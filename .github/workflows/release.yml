@@ -1,0 +1,43 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  codeQualityAnalysis:
+    name: 🔁 ${{ matrix.task.name }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        task:
+          - { name: "ESLint", script: "npm run lint" }
+          - { name: "Prettier Check", script: "npx prettier --check ." }
+          - { name: "Tests", script: "npm run test" }
+          - { name: "TypeCheck", script: "npm run typeCheck" }
+          - { name: "Audit", script: "npm audit --audit-level=high" }
+          - { name: "Build", script: "npm run build" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/dependencies
+      - run: ${{ matrix.task.script }}
+
+  publish:
+    name: 📦 Publish to NPM
+    needs: codeQualityAnalysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/dependencies
+      - run: npm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

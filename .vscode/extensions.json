@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "yzhang.markdown-all-in-one",
+    "esbenp.prettier-vscode",
+    "steoates.autoimport",
+    "bhank.vscode-bad-code-highlighter",
+    "hookyqr.jsdoctagcomplete",
+    "oouo-diogo-perdigao.docthis",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "codezombiech.gitignore",
+    "sburg.vscode-javascript-booster",
+    "ghmcadams.lintlens",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "rvest.vs-code-prettier-eslint",
+    "mohsen1.prettify-json",
+    "yoavbls.pretty-ts-errors",
+    "kingsimba.tsdoc-comment",
+    "pflannery.vscode-versionlens"
+  ],
+  "unwantedRecommendations": []
+}

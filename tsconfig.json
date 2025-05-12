@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es2015", "es2016", "es2017", "es2018", "esnext"],
+    "declaration": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*", "**/*.test.*", "**/*.spec.*"]
+}

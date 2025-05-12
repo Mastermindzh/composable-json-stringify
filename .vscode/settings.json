@@ -1,0 +1,8 @@
+{
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "files.trimTrailingWhitespace": true,
+  "files.encoding": "utf8",
+  "cSpell.flagWords": [],
+  "cSpell.words": ["Kysely", "uppercases"],
+  "autoimport.doubleQuotes": true
+}
