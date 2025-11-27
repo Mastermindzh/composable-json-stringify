@@ -1,0 +1,70 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "assignees": ["Mastermindzh"],
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "major"],
+      "commitMessagePrefix": "deps(major): ",
+      "additionalBranchPrefix": "deps-major-",
+      "postUpgradeTasks": {
+        "commands": ["npm version major --no-git-tag-version"],
+        "fileFilters": ["package.json"],
+        "executionMode": "branch"
+      }
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor"],
+      "labels": ["dependencies", "minor"],
+      "commitMessagePrefix": "deps(minor): ",
+      "additionalBranchPrefix": "deps-minor-",
+      "postUpgradeTasks": {
+        "commands": ["npm version minor --no-git-tag-version"],
+        "fileFilters": ["package.json"],
+        "executionMode": "branch"
+      }
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["patch"],
+      "labels": ["dependencies", "patch"],
+      "commitMessagePrefix": "deps(patch): ",
+      "additionalBranchPrefix": "deps-patch-",
+      "postUpgradeTasks": {
+        "commands": ["npm version patch --no-git-tag-version"],
+        "fileFilters": ["package.json"],
+        "executionMode": "branch"
+      }
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["devDependencies", "major"],
+      "commitMessagePrefix": "devDeps(major): ",
+      "additionalBranchPrefix": "devdeps-major-",
+      "postUpgradeTasks": {
+        "commands": ["npm version patch --no-git-tag-version"],
+        "fileFilters": ["package.json"],
+        "executionMode": "branch"
+      }
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "labels": ["devDependencies"],
+      "commitMessagePrefix": "devDeps: ",
+      "additionalBranchPrefix": "devdeps-",
+      "groupName": "devDependencies (non-major)"
+    }
+  ],
+  "prConcurrentLimit": 5,
+  "branchConcurrentLimit": 3
+}
