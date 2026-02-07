@@ -18,7 +18,7 @@
     "mohsen1.prettify-json",
     "yoavbls.pretty-ts-errors",
     "kingsimba.tsdoc-comment",
-    "pflannery.vscode-versionlens"
+    "legalfina.npm-version-lens"
   ],
   "unwantedRecommendations": []
 }
